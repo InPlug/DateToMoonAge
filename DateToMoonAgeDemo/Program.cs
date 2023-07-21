@@ -1,8 +1,9 @@
 ﻿using System;
+using Vishnu_UserModules;
 
-namespace Vishnu_UserModules
+namespace DateToMoonAgeDemo
 {
-    class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
@@ -14,9 +15,9 @@ namespace Vishnu_UserModules
             {
                 string dateString = String.Format($"{i:D2}.05.2020");
                 myDate = DateTime.ParseExact(dateString, "dd.MM.yyyy", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None);
-                string moonAgeString = dateToMoonAge.ModifyValue(myDate).ToString();
+                string? moonAgeString = dateToMoonAge.ModifyValue(myDate)?.ToString();
                 int moonPhase = Convert.ToInt32(moonAgeString) / 4 + 1;
-                
+
                 Console.WriteLine("{0} -> {1}: {2}", myDate, moonAgeString, moonPhase);
             }
         }

@@ -12,13 +12,14 @@ namespace Vishnu_UserModules
     ///
     /// 04.04.2020 Erik Nagel: erstellt
     /// </remarks>
-    [Serializable()]
+    [DataContract] //[Serializable()]
     public class DateToMoonAge_ReturnObject
     {
         /// <summary>
         /// Mondalter in Tagen.
         /// </summary>
-        public int MoonAge { get; set; }
+        [DataMember]
+        public int? MoonAge { get; set; }
 
         /// <summary>
         /// Standard-Konstruktor - setzt die DefaultResultProperty auf den Default wert.
@@ -41,7 +42,7 @@ namespace Vishnu_UserModules
         /// <param name="context">Übertragungs-Kontext.</param>
         protected DateToMoonAge_ReturnObject(SerializationInfo info, StreamingContext context)
         {
-            this.MoonAge = (int)info.GetValue("MoonAge", typeof(int));
+            this.MoonAge = (int?)info.GetValue("MoonAge", typeof(int));
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Vishnu_UserModules
         /// </summary>
         /// <param name="obj">Das zu vergleichende Result.</param>
         /// <returns>True, wenn das übergebene Result inhaltlich gleich diesem Result ist.</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (obj == null || this.GetType() != obj.GetType())
             {

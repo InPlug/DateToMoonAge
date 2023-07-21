@@ -21,7 +21,7 @@ namespace Vishnu_UserModules
         /// </summary>
         /// <param name="toConvert">Datum als DateTime.</param>
         /// <returns>Mondalter in Tagen.</returns>
-        public object ModifyValue(object toConvert)
+        public object? ModifyValue(object? toConvert)
         {
             if (toConvert is DateTime)
             {
@@ -37,7 +37,7 @@ namespace Vishnu_UserModules
             }
             else
             {
-                throw new ArgumentException(String.Format("{0}: kann {1} nicht konvertieren, erwartet wird DateTime", this.GetType().Name, toConvert.ToString()));
+                throw new ArgumentException(String.Format("{0}: kann {1} nicht konvertieren, erwartet wird DateTime", this.GetType().Name, toConvert?.ToString()));
             }
         }
 
