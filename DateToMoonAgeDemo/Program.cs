@@ -1,5 +1,4 @@
-﻿using System;
-using Vishnu_UserModules;
+﻿using Vishnu_UserModules;
 
 namespace DateToMoonAgeDemo
 {
