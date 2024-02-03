@@ -10,7 +10,7 @@
     <Authors>Erik Nagel</Authors>
     <Company>NetEti</Company>
     <Description>$(AssemblyName) - Vishnu-Checker: wandelt ein übergebenes Datum in das zugehörige Mondalter</Description>
-    <Copyright>Copyright © $(Authors) 2020-2023</Copyright>
+    <Copyright>Copyright © $(Authors) 2020-$([System.DateTime]::Now.Year)</Copyright>
     <AssemblyVersion>8.0.0.0</AssemblyVersion>
     <FileVersion>8.0.0.0</FileVersion>
     <PackageTags>NetEti Vishnu Plugin Date Moon Age Converter</PackageTags>
